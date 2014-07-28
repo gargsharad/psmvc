@@ -1,3 +1,4 @@
+
 <%
- response.sendRedirect("web/index.htm");
+ response.sendRedirect("web/index.jsp");
 %>

@@ -14,40 +14,42 @@ import org.springframework.web.servlet.DispatcherServlet;
 
 public class ApplicationInitializer implements WebApplicationInitializer {
 
-	private static final Class<?>[] configurationClasses = new Class<?>[] {
-			WebMvcContextConfiguration.class,
-			PersistanceContextConfiguration.class };
-	
-	private static final Logger _log = LoggerFactory.getLogger(ApplicationInitializer.class);
+    private static final Class<?>[] configurationClasses = new Class<?>[] { WebMvcContextConfiguration.class, PersistanceContextConfiguration.class };
 
-	private static final String DISPATCHER_SERVLET_NAME = "dispatcher";
+    private static final Logger _log = LoggerFactory.getLogger(ApplicationInitializer.class);
 
-	@Override
-	public void onStartup(ServletContext servletContext)
-			throws ServletException {
-	    _log.debug("Sharad");
-		registerListener(servletContext);
-		registerDispatcherServlet(servletContext);
-	}
+    private static final String DISPATCHER_SERVLET_NAME = "dispatcher";
 
-	private void registerDispatcherServlet(ServletContext servletContext) {
-		AnnotationConfigWebApplicationContext dispatcherContext = createContext(WebMvcContextConfiguration.class);
-		ServletRegistration.Dynamic dispatcher = servletContext.addServlet(DISPATCHER_SERVLET_NAME, new DispatcherServlet(dispatcherContext));
-		dispatcher.setLoadOnStartup(1);
-		dispatcher.addMapping("/web/*");
-	}
+    @Override
+    public void onStartup(ServletContext servletContext) throws ServletException {
+	_log.debug("Initializing Application using WebApplicationInitializer");
+	registerListener(servletContext);
+	registerDispatcherServlet(servletContext);
+    }
 
-	private void registerListener(ServletContext servletContext) {
-		AnnotationConfigWebApplicationContext rootContext = createContext(configurationClasses);
-		servletContext.addListener(new ContextLoaderListener(rootContext));
-		servletContext.addListener(new RequestContextListener());
-	}
+    private void registerDispatcherServlet(ServletContext servletContext) {
+	_log.debug("Creating context for dispatcher servlet using :: WebMvcContextConfiguration ::");
+	AnnotationConfigWebApplicationContext dispatcherContext = createContext(WebMvcContextConfiguration.class);
+	_log.debug("Adding dispatcher servlet to servlet context");
+	ServletRegistration.Dynamic dispatcher = servletContext.addServlet(DISPATCHER_SERVLET_NAME, new DispatcherServlet(dispatcherContext));
+	dispatcher.setLoadOnStartup(1);
+	_log.debug("adding mapping /web/* to  dispatcher servlet");
+	dispatcher.addMapping("/web/*");
+    }
 
-	private AnnotationConfigWebApplicationContext createContext(
-			final Class<?>... annotatedClasses) {
-		AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
-		context.register(annotatedClasses);
-		return context;
-	}
+    private void registerListener(ServletContext servletContext) {
+	_log.debug("Creating root application context :: AnnotationConfigWebApplicationContext ::");
+	AnnotationConfigWebApplicationContext rootContext = createContext(configurationClasses);
+	_log.debug("Adding  ContextLoaderListener to root context");
+	servletContext.addListener(new ContextLoaderListener(rootContext));
+	_log.debug("Adding  RequestContextListener to servlet context");
+	servletContext.addListener(new RequestContextListener());
+    }
+
+    private AnnotationConfigWebApplicationContext createContext(final Class<?>... annotatedClasses) {
+	AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
+	context.register(annotatedClasses);
+	return context;
+    }
 
 }

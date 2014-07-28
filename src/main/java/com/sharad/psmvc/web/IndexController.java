@@ -10,14 +10,14 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class IndexController {
 
-	@RequestMapping(value = "/index.htm")
+	@RequestMapping(value = "/index.jsp")
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		ModelAndView mav = new ModelAndView("/WEB-INF/views/index.jsp");
+		ModelAndView mav = new ModelAndView("index");
 		mav.addObject("theModelKey", "Spring says HI!");
 		return mav;
 	}
 	
-	@RequestMapping(value = "/index2.htm")
+	@RequestMapping(value = "/index2.jsp")
 	public ModelAndView handleRequest2(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mav = new ModelAndView("/WEB-INF/views/index2.jsp");
 		mav.addObject("theModelKey", "Spring says HI!");
