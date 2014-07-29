@@ -12,8 +12,8 @@
 <title>Bookstore | <spring:message code="${titleKey}"
 		text="Your Home in Books" /></title>
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="../web-resources/css/style.css"/>">
-<script src="<c:url value="../web-resources/jquery-1.7.1.min.js"/>"></script>
+	href="<c:url value="../assets/css/style.css"/>">
+<script src="<c:url value="../assets/jquery-1.7.1.min.js"/>"></script>
 
 </head>
 <body>
@@ -34,7 +34,7 @@
 
 					<div class="title">
 						<span class="title_icon"><img
-							src="<c:url value="../web-resources/images/bullet4.gif"/>" alt=""
+							src="<c:url value="../assets/images/bullet4.gif"/>" alt=""
 							title="" /></span>
 						<spring:message code="main.title.randombooks" />
 					</div>
@@ -44,7 +44,7 @@
 							<a href="${bookUrl}">${book.title}</a>
 							<div class="new_prod_img">
 								<c:url
-									value="../web-resources/images/books/${book.isbn}/book_front_cover.png"
+									value="../assets/images/books/${book.isbn}/book_front_cover.png"
 									var="bookImage" />
 								<a href="${bookUrl}"><img src="${bookImage}"
 									alt="${book.title}" title="${book.title}" class="thumb"

@@ -4,16 +4,16 @@
 		<Console name="Console" target="SYSTEM_OUT">
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
 		</Console>
-		<File name="Appender1" fileName="/home/sharad/logs/appconfig.log">
+		<File name="Appender1" fileName="C:/logs/appconfig.log">
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
 		</File>
-		<File name="Appender2" fileName="/home/sharad/logs/app_web.log">
+		<File name="Appender2" fileName="C:/logs/app_web.log">
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
 		</File>
-		<File name="Appender3" fileName="/home/sharad/logs/spring_web.log">
+		<File name="Appender3" fileName="C:/logs/spring_web.log">
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
 		</File>
-		<File name="Appender4" fileName="/home/sharad/logs/spring.log">
+		<File name="Appender4" fileName="C:/logs/spring.log">
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
 		</File>
 	</Appenders>

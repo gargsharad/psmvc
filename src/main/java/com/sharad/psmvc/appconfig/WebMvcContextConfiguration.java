@@ -17,39 +17,42 @@ import com.sharad.psmvc.web.IndexController;
 @EnableWebMvc
 public class WebMvcContextConfiguration extends WebMvcConfigurerAdapter {
 
-    @Bean
-    public IndexController indexController() {
-	return new IndexController();
-    }
+	@Bean
+	public IndexController indexController() {
+		return new IndexController();
+	}
 
-    @Bean
-    public TilesConfigurer tilesConfigurer() {
-	return new TilesConfigurer();
-    }
+	@Bean
+	public TilesConfigurer tilesConfigurer() {
+		return new TilesConfigurer();
+	}
 
-    @Bean
-    public TilesViewResolver tilesViewResolver() {
-	TilesViewResolver tilesViewResolver = new TilesViewResolver();
-	tilesViewResolver.setOrder(2);
-	return tilesViewResolver;
-    }
-    
-    @Override
-    public void addViewControllers(final ViewControllerRegistry registry) {
-        registry.addViewController("/index.htm").setViewName("index");
-    }
-    
-    @Override
-    public void addResourceHandlers(final ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/resources/**/*").addResourceLocations("classpath:/webresources/");
-    }
-    
-    @Bean
-    public MessageSource messageSource() {
-        ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-        messageSource.setBasename("classpath:/messages");
-        messageSource.setUseCodeAsDefaultMessage(true);
-        return messageSource;
-    }
+	@Bean
+	public TilesViewResolver tilesViewResolver() {
+		TilesViewResolver tilesViewResolver = new TilesViewResolver();
+		tilesViewResolver.setOrder(0);
+		return tilesViewResolver;
+	}
+
+	@Override
+	public void addViewControllers(final ViewControllerRegistry registry) {
+		registry.addViewController("/index.jsp").setViewName("index");
+	}
+
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/assets/**/*").addResourceLocations("/assets/");
+		//registry.addResourceHandler("/css/**").addResourceLocations("/css/");
+		//registry.addResourceHandler("/img/**").addResourceLocations("/images/");
+		//registry.addResourceHandler("/js/**").addResourceLocations("/jquery/");
+	}
+
+	@Bean
+	public MessageSource messageSource() {
+		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
+		messageSource.setBasename("classpath:/messages");
+		messageSource.setUseCodeAsDefaultMessage(true);
+		return messageSource;
+	}
 
 }

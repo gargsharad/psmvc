@@ -5,7 +5,7 @@
 	<c:url value="/index.htm" var="homeUrl" />
 	<div class="logo">
 		<a href="${homeUrl}"><img
-			src="<c:url value="../web-resources/images/logo.gif"/>" alt=""
+			src="<c:url value="../assets/images/logo.gif"/>" alt=""
 			title="" border="0" /></a>
 	</div>
 	<div class="nav">
@@ -32,10 +32,10 @@
 		</ul>
 		<ul style="float: right;">
 			<li><a href="?lang=en" class="selected"><img
-					src="<c:url value="../web-resources/images/gb.gif"/>" alt=""
+					src="<c:url value="../assets/images/gb.gif"/>" alt=""
 					title="" border="0" /></a></li>
 			<li><a href="?lang=nl"><img
-					src="<c:url value="../web-resources/images/nl.gif"/>" alt=""
+					src="<c:url value="../assets/images/nl.gif"/>" alt=""
 					title="" border="0" /></a></li>
 		</ul>
 	</div>
