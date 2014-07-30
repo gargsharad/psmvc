@@ -18,19 +18,17 @@
 		</File>
 	</Appenders>
 	<Loggers>
-		<Logger name="com.sharad.psmvc.appconfig" level="debug"
-			additivity="false">
-			<AppenderRef ref="Appender1" />
+		<Logger name="com.sharad.psmvc.appconfig" level="debug"	additivity="false">
+			<AppenderRef ref="Appender1"/>
 		</Logger>
 		<Logger name="com.sharad.psmvc.web" level="debug" additivity="false">
-			<AppenderRef ref="Appender2" />
+			<AppenderRef ref="Appender2"/>
 		</Logger>
-		<Logger name="org.springframework.web" level="debug"
-			additivity="false">
-			<AppenderRef ref="Appender3" />
+		<Logger name="org.springframework.web" level="debug" additivity="false">
+			<AppenderRef ref="Appender3"/>
 		</Logger>
 		<Logger name="org.springframework" level="debug" additivity="false">
-			<AppenderRef ref="Appender4" />
+			<AppenderRef ref="Appender4"/>
 		</Logger>
 		<Root level="debug">
 			<AppenderRef ref="Console" />

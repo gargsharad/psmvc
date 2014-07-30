@@ -201,12 +201,6 @@
 					<artifactId>maven-war-plugin</artifactId>
 					<version>2.4</version>
 					<configuration>
-						<webResources>
-							<resource>
-								<directory>webresources</directory>
-								<targetPath>WEB-INF</targetPath>
-							</resource>
-						</webResources>
 						<failOnMissingWebXml>false</failOnMissingWebXml>
 					</configuration>
 				</plugin>
