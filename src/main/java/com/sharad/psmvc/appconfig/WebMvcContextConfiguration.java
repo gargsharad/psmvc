@@ -41,7 +41,7 @@ public class WebMvcContextConfiguration extends WebMvcConfigurerAdapter {
     
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/resources/**/*").addResourceLocations("classpath:/webresources/");
+        registry.addResourceHandler("/resources/**/*").addResourceLocations("classpath:/WEB-INF/resources/");
     }
     
     @Bean
