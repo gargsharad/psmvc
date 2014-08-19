@@ -4,33 +4,31 @@
 		<Console name="Console" target="SYSTEM_OUT">
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
 		</Console>
-		<File name="Appender1" fileName="C:/logs/appconfig.log">
+		<File name="Appender1" fileName="/home/sharad/logs/appconfig.log">
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
 		</File>
-		<File name="Appender2" fileName="C:/logs/app_web.log">
+		<File name="Appender2" fileName="/home/sharad/logs/app_web.log">
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
 		</File>
-		<File name="Appender3" fileName="C:/logs/spring_web.log">
+		<File name="Appender3" fileName="/home/sharad/logs/spring_web.log">
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
 		</File>
-		<File name="Appender4" fileName="C:/logs/spring.log">
+		<File name="Appender4" fileName="/home/sharad/logs/spring.log">
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
 		</File>
 	</Appenders>
 	<Loggers>
-		<Logger name="com.sharad.psmvc.appconfig" level="debug"
-			additivity="false">
-			<AppenderRef ref="Appender1" />
+		<Logger name="com.sharad.psmvc.appconfig" level="debug"	additivity="false">
+			<AppenderRef ref="Appender1"/>
 		</Logger>
 		<Logger name="com.sharad.psmvc.web" level="debug" additivity="false">
-			<AppenderRef ref="Appender2" />
+			<AppenderRef ref="Appender2"/>
 		</Logger>
-		<Logger name="org.springframework.web" level="debug"
-			additivity="false">
-			<AppenderRef ref="Appender3" />
+		<Logger name="org.springframework.web" level="debug" additivity="false">
+			<AppenderRef ref="Appender3"/>
 		</Logger>
 		<Logger name="org.springframework" level="debug" additivity="false">
-			<AppenderRef ref="Appender4" />
+			<AppenderRef ref="Appender4"/>
 		</Logger>
 		<Root level="debug">
 			<AppenderRef ref="Console" />
