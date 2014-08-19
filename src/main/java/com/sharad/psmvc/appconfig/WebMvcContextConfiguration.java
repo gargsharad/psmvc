@@ -2,6 +2,7 @@ package com.sharad.psmvc.appconfig;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -11,16 +12,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
-import com.sharad.psmvc.web.IndexController;
-
 @Configuration
+@ComponentScan(basePackages = {"com.sharad.psmvc.web"})
 @EnableWebMvc
 public class WebMvcContextConfiguration extends WebMvcConfigurerAdapter {
-
-	@Bean
-	public IndexController indexController() {
-		return new IndexController();
-	}
 
 	@Bean
 	public TilesConfigurer tilesConfigurer() {

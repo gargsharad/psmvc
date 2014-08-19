@@ -12,7 +12,7 @@
 		<ul style="float: left;">
 			<li class="selected"><a href="${homeUrl}"><spring:message
 						code="nav.home" /></a></li>
-			<li><a href="<c:url value="/book/search"/>"><spring:message
+			<li><a href="<c:url value="book/search"/>"><spring:message
 						code="nav.books" /></a></li>
 			<li><a href="<c:url value="/customer/account"/>"><spring:message
 						code="nav.account" /></a></li>

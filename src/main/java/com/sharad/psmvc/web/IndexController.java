@@ -19,12 +19,4 @@ public class IndexController {
 		mav.addObject("theModelKey", "Spring says HI!");
 		return mav;
 	}
-	
-	@RequestMapping(value = "/index2.jsp")
-	public ModelAndView handleRequest2(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		ModelAndView mav = new ModelAndView("/WEB-INF/views/index2.jsp");
-		mav.addObject("theModelKey", "Spring says HI!");
-		return mav;
-	}
-
 }
