@@ -13,8 +13,8 @@ public class CustomerResourceTest {
 		Client client = ClientBuilder.newClient();
 		try {
 			System.out.println("*** Create a new Customer ***");
-			String xml = "<customer>" + "<first-name>Bill</first-name>"
-					+ "<last-name>Burke</last-name>"
+			String xml = "<customer>" + "<first-name></first-name>"
+					+ "<last-name></last-name>"
 					+ "<street>256 Clarendon Street</street>"
 					+ "<city>Boston</city>" + "<state>MA</state>"
 					+ "<zip>02115</zip>" + "<country>USA</country>"
@@ -22,6 +22,7 @@ public class CustomerResourceTest {
 			Response response = client
 					.target("http://localhost:8080/psmvc/services/customers")
 					.request().post(Entity.xml(xml));
+			System.out.println(response.toString());
 			if (response.getStatus() != 201)
 				throw new RuntimeException("Failed to create");
 			String location = response.getLocation().toString();

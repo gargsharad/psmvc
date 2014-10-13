@@ -16,7 +16,7 @@ import org.springframework.web.context.request.RequestContextListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
-import com.sharad.psmvc.rest.NotesApplication;
+import com.sharad.psmvc.rest.BookStoreServices;
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class ApplicationInitializer implements WebApplicationInitializer {
 
@@ -39,7 +39,7 @@ public class ApplicationInitializer implements WebApplicationInitializer {
     private void registerJerseyServlet(ServletContext servletContext) {
     	_log.debug("Adding jersey servlet to servlet context");
     	ServletRegistration.Dynamic jersey = servletContext.addServlet(JERSEY_SERVLET_NAME, ServletContainer.class.getName());
-    	jersey.setInitParameter("javax.ws.rs.Application", NotesApplication.class.getName());
+    	jersey.setInitParameter("javax.ws.rs.Application", BookStoreServices.class.getName());
     	jersey.setLoadOnStartup(1);
     	_log.debug("adding mapping /services/* to  dispatcher servlet");
     	jersey.addMapping("/services/*");

@@ -45,7 +45,7 @@ public class WebMvcContextConfiguration extends WebMvcConfigurerAdapter {
 	@Bean
 	public MessageSource messageSource() {
 		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-		messageSource.setBasename("classpath:/messages");
+		messageSource.setBasenames("classpath:/messages","classpath:/validation_messages", "classpath:/page_lable", "classpath:/messages");
 		messageSource.setUseCodeAsDefaultMessage(true);
 		return messageSource;
 	}
