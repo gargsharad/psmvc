@@ -3,7 +3,10 @@ package psmvc;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
+import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.Response;
+
+import org.glassfish.jersey.server.validation.ValidationError;
 
 import com.sharad.psmvc.domain.Customer;
 
@@ -22,7 +25,8 @@ public class CustomerResourceTest {
 			Response response = client
 					.target("http://localhost:8080/psmvc/services/customers")
 					.request().post(Entity.xml(xml));
-			System.out.println(response.toString());
+			response.bufferEntity();
+			System.out.println(response.readEntity(String.class));
 			if (response.getStatus() != 201)
 				throw new RuntimeException("Failed to create");
 			String location = response.getLocation().toString();

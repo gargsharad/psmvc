@@ -8,6 +8,7 @@ import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.ServerProperties;
 import org.glassfish.jersey.server.spring.scope.RequestContextFilter;
 
+import com.sharad.psmvc.exception.mappers.ValidationExceptionMapper;
 import com.sharad.psmvc.rest.resource.CustomerResource;
 import com.sharad.psmvc.rest.resource.HealthResource;
 import com.sharad.psmvc.rest.resource.NotesResource;
@@ -21,6 +22,7 @@ public class BookStoreServices extends ResourceConfig {
 	register(HealthResource.class);
 	register(LoggingFilter.class);
 	register(CustomerResource.class);
+	register(ValidationExceptionMapper.class);
 	register(MoxyJsonFeature.class);
 	register(JsonConfiguration.class);
     }

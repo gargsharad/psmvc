@@ -13,6 +13,7 @@ public class Customer {
 	@XmlAttribute
 	private int id;
 	@XmlElement
+	@NotNull(message="{not.null}")
 	private String firstName;
 	@XmlElement
 	@NotNull(message="{not.null}")
