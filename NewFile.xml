@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<validationErrors>
+	<validationError>
+		<invalidValue>Customer.createCustomer.arg0.lastName</invalidValue>
+		<messageTemplate>{not.null}</messageTemplate>
+		<path>{not.null}</path>
+	</validationError>
+</validationErrors>
