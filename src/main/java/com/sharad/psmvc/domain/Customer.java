@@ -13,25 +13,25 @@ public class Customer {
 	@XmlAttribute
 	private int id;
 	@XmlElement
-	@NotNull(message="{not.null}")
+	@NotNull(message="not.null")
 	private String firstName;
 	@XmlElement
-	@NotNull(message="{not.null}")
+	@NotNull(message="not.null")
 	private String lastName;
 	@XmlElement
-	@NotNull(message="{not.null}")
+	@NotNull(message="not.null")
 	private String street;
 	@XmlElement
-	@NotNull(message="{not.null}")
+	@NotNull(message="not.null")
 	private String city;
 	@XmlElement
-	@NotNull(message="{not.null}")
+	@NotNull(message="not.null")
 	private String state;
 	@XmlElement
-	@NotNull(message="{not.null}")
+	@NotNull(message="not.null")
 	private String zip;
 	@XmlElement
-	@NotNull(message="{not.null}")
+	@NotNull(message="not.null")
 	private String country;
 
 	public int getId() {

@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <validationErrors>
 	<validationError>
-		<invalidValue>Customer.createCustomer.arg0.lastName</invalidValue>
+		<message>property can not be null</message>
 		<messageTemplate>{not.null}</messageTemplate>
-		<path>{not.null}</path>
+		<path>Customer.createCustomer.arg0.lastName</path>
+	</validationError>
+	<validationError>
+		<message>property can not be null</message>
+		<messageTemplate>{not.null}</messageTemplate>
+		<path>Customer.createCustomer.arg0.firstName</path>
 	</validationError>
 </validationErrors>

@@ -58,8 +58,7 @@ public class ValidationExceptionMapper implements ExceptionMapper<ValidationExce
 	final List<ValidationError> errors = new ArrayList<ValidationError>();
 
 	for (final ConstraintViolation<?> violation : violations) {
-	    errors.add(new ValidationError(getInvalidValue(violation.getInvalidValue()), violation.getMessage(), violation.getMessageTemplate(),
-		    getPath(violation)));
+	    errors.add(new ValidationError(violation.getMessage(), violation.getMessageTemplate(), getPath(violation), getInvalidValue(violation.getInvalidValue())));
 	}
 
 	return errors;
