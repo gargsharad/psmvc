@@ -9,5 +9,6 @@
 		<message>property can not be null</message>
 		<messageTemplate>{not.null}</messageTemplate>
 		<path>Customer.createCustomer.arg0.firstName</path>
+
 	</validationError>
 </validationErrors>
