@@ -1,14 +1,14 @@
 pipeline {
     agent any
+    tools { 
+        maven 'Maven-3.5.0' 
+        jdk 'Java - 1.8.0_141' 
+    }
     stages {
         stage('Build') {
-            withMaven(
-                // Maven installation declared in the Jenkins "Global Tool Configuration"
-                maven: 'M3'
-            ) {
-                // Run the maven build
+            steps {
                 sh "mvn clean install"
-            } // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe reports and FindBugs reports
+            }
         }
     }
 }
