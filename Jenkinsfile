@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "mvn clean install"
+                sh "mvn versions:set -DnewVersion=${env.BUILD_NUMber} clean install"
             }
             post {
                 success {
