@@ -16,9 +16,8 @@ pipeline {
             }
         }
         stage('Deploy'){
-            agent{
-                apache
-            }
+            agent apache
+
             steps{
                 sh "cp target/*.war /var/www/html/psmvc/all/" 
             }
