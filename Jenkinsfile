@@ -20,7 +20,7 @@ pipeline {
                 label 'apache'
             }
             steps{
-                sh "cp target/*.war /var/www/html/psmvc/all/" 
+                sh "cp target/psmvc-1.war /var/www/html/psmvc/all/" 
             }
         }   
     }
