@@ -85,4 +85,16 @@ public class AccountServiceImplTest {
 	// TODO review the generated test code and remove the default call to fail.
     }
     
+    @Test
+    public void testGetAccount1() {
+	System.out.println("getAccount");
+	String username = "";
+	Account account = new Account();
+	AccountServiceImpl instance = new AccountServiceImpl();
+	Account expResult = new Account();
+	//Account result = instance.getAccount(username);
+	assertNotEquals(expResult, account);
+	// TODO review the generated test code and remove the default call to fail.
+    }
+    
 }
