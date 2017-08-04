@@ -5,14 +5,17 @@ pipeline {
         jdk 'Java - 1.8.0_141' 
     }
     stages {
-        stage('Pre Build') {
+        stage('PreBuild') {
+            when{
+                expression { 
+                    sh 'git log -1 > GIT_LOG'
+                    return readFile('pom.xml').contains('maven-release-plugin')
+                }
+
+            }
             steps{
-                sh 'git log -1 > GIT_LOG'
-                def git_log = readFile 'GIT_LOG'
-            if (git_log.contains('[maven-release-plugin]')) {
                 currentBuild.result = 'ABORTED'
                 return
-            }
             }
             
         }
