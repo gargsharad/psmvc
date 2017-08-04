@@ -1,5 +1,16 @@
-pipeline {
+node {
+    
     agent any
+
+    sh 'git log -1 > GIT_LOG'
+    git_log = readFile 'GIT_LOG'
+    if (git_log.contains('[maven-release-plugin]')) {
+        currentBuild.result = 'ABORTED'
+        return
+    }
+    
+    
+    
     tools { 
         maven 'Maven-3.5.0' 
         jdk 'Java - 1.8.0_141' 
@@ -7,14 +18,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                checkLastCommit(){
-                    sh 'git log -1 > GIT_LOG'
-                    git_log = readFile 'GIT_LOG'
-                    if (git_log.contains('[maven-release-plugin]')) {
-                        currentBuild.result = 'ABORTED'
-                        return
-                    }
-                }
                 sh "mvn versions:set -DnewVersion=${env.BUILD_NUMBER} clean install"
             }
             post {
