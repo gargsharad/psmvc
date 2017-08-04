@@ -14,7 +14,7 @@ pipeline {
 
             }
             steps{
-                currentBuild.result = 'ABORTED'
+                error 'Aborted'
             }
             
         }
