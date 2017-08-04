@@ -9,13 +9,12 @@ pipeline {
             when{
                 expression { 
                     sh 'git log -1 > GIT_LOG'
-                    return readFile('pom.xml').contains('maven-release-plugin')
+                    return readFile('GIT_LOG').contains('maven-release-plugin')
                 }
 
             }
             steps{
                 currentBuild.result = 'ABORTED'
-                return
             }
             
         }
