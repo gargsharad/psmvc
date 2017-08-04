@@ -8,12 +8,13 @@ pipeline {
         stage('Pre Build') {
             steps{
                 sh 'git log -1 > GIT_LOG'
-            }
-            def git_log = readFile 'GIT_LOG'
+                def git_log = readFile 'GIT_LOG'
             if (git_log.contains('[maven-release-plugin]')) {
                 currentBuild.result = 'ABORTED'
                 return
             }
+            }
+            
         }
         stage('Build') {
             steps {
