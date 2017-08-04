@@ -1,6 +1,4 @@
 node {
-    
-    agent any
 
     sh 'git log -1 > GIT_LOG'
     git_log = readFile 'GIT_LOG'
