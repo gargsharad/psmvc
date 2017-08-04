@@ -5,19 +5,6 @@ pipeline {
         jdk 'Java - 1.8.0_141' 
     }
     stages {
-        stage('PreBuild') {
-            when{
-                expression { 
-                    sh 'git log -1 > GIT_LOG'
-                    return readFile('GIT_LOG').contains('maven-release-plugin')
-                }
-
-            }
-            steps{
-                error 'Aborted'
-            }
-            
-        }
         stage('Build') {
             steps {
                 sh "mvn versions:set -DnewVersion=${env.BUILD_NUMBER} clean install"
