@@ -14,7 +14,7 @@ pipeline {
                     junit 'target/surefire-reports/*.xml' 
                 }
             }
-        }
+        } 
         stage('Deploy'){
             agent {
                 label 'apache'
