@@ -5,7 +5,7 @@ pipeline {
         jdk 'Java - 1.8.0_141' 
     } 
     stages {
-        stage('Build') { 
+        stage('Build') {b
             steps {
                 sh "mvn versions:set -DnewVersion=${env.BUILD_NUMBER} clean install"
             }
